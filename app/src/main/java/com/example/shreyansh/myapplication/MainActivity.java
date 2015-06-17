@@ -23,6 +23,9 @@ public class MainActivity extends Activity {
         Logger.log("oncreate 1");
         setContentView(R.layout.activity_main);
 
+
+
+
         TextView textViewToChange = (TextView) findViewById(R.id.hey);
         textViewToChange.setText("Good Morning");
 
