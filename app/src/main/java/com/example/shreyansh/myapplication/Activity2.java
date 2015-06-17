@@ -21,7 +21,7 @@ public class Activity2 extends Activity {
         //Logger.log("no problem before super oncreate");
         super.onCreate(savedInstanceState);
         //Log.d(TAG, "activity started :)");
-        Logger.log("oncreate 2");
+        //Logger.log("oncreate 2");
 
         setContentView(R.layout.activity_main);
 
@@ -43,7 +43,7 @@ public class Activity2 extends Activity {
 
         //Logger.log("no problem before super onsaveinstancestate");
         super.onSaveInstanceState(outState);
-        Logger.log("onsaveinstancestate 2");
+        //Logger.log("onsaveinstancestate 2");
 
 //        Intent myI = new Intent(this, Activity2.class);
 //        myI.getIntExtra(count, i);
