@@ -26,6 +26,8 @@ public class MainActivity extends Activity {
         TextView textViewToChange = (TextView) findViewById(R.id.hey);
         textViewToChange.setText("Good Morning");
 
+        int a = 5;
+
 /*        if (savedInstanceState == null) {
             Logger.log("count : " + i);
         }
