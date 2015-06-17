@@ -28,15 +28,7 @@ public class Activity2 extends Activity {
         TextView textViewToChange = (TextView) findViewById(R.id.hey);
         textViewToChange.setText("Good Evening");
 
-/*        if (savedInstanceState == null) {
-            Logger.log("count : " + i);
-        }
-        else
-        {
-            i = savedInstanceState.getInt(count);
-            Logger.log("count :" + i);
-        }
-*/    }
+   }
 
     public void onClickButton(View v) {
         Intent myI = new Intent(this, Activity3.class);
@@ -59,8 +51,6 @@ public class Activity2 extends Activity {
 
     }
 
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -82,19 +72,4 @@ public class Activity2 extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-/*
-    @Override
-    protected void onStop() {
-        //Logger.log("no problem before super onstop");
-        super.onStop();
-        Logger.log("onstop 2");
-
-    }
-
-    @Override
-    protected void onDestroy() {
-        //Logger.log("no problem before super ondestroy");
-        super.onDestroy();
-        Logger.log("ondestroy 2");
-    }*/
 }
