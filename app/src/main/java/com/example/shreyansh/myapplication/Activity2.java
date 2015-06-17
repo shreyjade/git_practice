@@ -30,6 +30,16 @@ public class Activity2 extends Activity {
 
    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
     public void onClickButton(View v) {
         Intent myI = new Intent(this, Activity3.class);
 //        myI.getIntExtra(count, i);
@@ -71,5 +81,20 @@ public class Activity2 extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }
