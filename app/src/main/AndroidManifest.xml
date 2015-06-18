@@ -30,6 +30,19 @@
             android:enabled="true"
             android:exported="true" >
         </service>
+
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.example.shreyansh.myapplication.MY_IN"/>
+
+                <action android:name="com.example.shreyansh.myapplication.MY_INTENT"/>
+               <!-- <action android:name="android.intent.action.SCREEN_OFF"/>
+-->
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

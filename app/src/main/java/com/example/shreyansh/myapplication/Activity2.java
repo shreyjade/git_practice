@@ -84,7 +84,14 @@ public class Activity2 extends Activity {
     }
 
     @Override
-    protected void onPause() {
+    protected void onPause()
+    {
+        Intent br = new Intent();
+        br.setAction("com.example.shreyansh.myapplication.MY_INTENT");
+        sendBroadcast(br);
+        br=new Intent();
+        br.setAction("com.example.shreyansh.myapplication.MY_IN");
+        sendBroadcast(br);
         super.onPause();
     }
 

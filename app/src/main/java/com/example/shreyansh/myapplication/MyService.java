@@ -33,6 +33,7 @@ public class MyService extends Service {
             }
         });
         t.start();
+        //stopSelf();
         return super.onStartCommand(intent, flags, startId);
     }
 
