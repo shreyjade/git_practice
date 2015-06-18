@@ -55,7 +55,7 @@ public class Activity3 extends Activity {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-//        i++;
+
 //        outState.putInt(count, i);
 
         //Logger.log("no problem before super onsaveinstancestate");
