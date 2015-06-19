@@ -11,9 +11,10 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-//    private int i =0;
+    //    private int i =0;
 //    private String count="dfg";
 //    private static String TAG = "My Application";
+    private Intent in;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,35 +23,45 @@ public class MainActivity extends Activity {
         //Log.d(TAG, "activity started :)");
         Logger.log("oncreate 1");
         setContentView(R.layout.activity_main);
+        in = getIntent();
 
-
-
-
-        TextView textViewToChange = (TextView) findViewById(R.id.hey);
-        textViewToChange.setText("Good Morning");
-
-
-        int a = 10;
-
-/*        if (savedInstanceState == null) {
-            Logger.log("count : " + i);
+        if (in.getAction().equals("android.intent.action.MAIN")) {
+            TextView textViewToChange = (TextView) findViewById(R.id.hey);
+            textViewToChange.setText("Good Morning Everyone !!");
+        } else {
+            String msg = in.getData().toString();
+            TextView textViewToChange = (TextView) findViewById(R.id.hey);
+            textViewToChange.setText(msg);
         }
-        else
-        {
-            i = savedInstanceState.getInt(count);
-            Logger.log("count :" + i);
+
+        if (savedInstanceState == null) {
+            TextView textViewToChange = (TextView) findViewById(R.id.hey);
+            textViewToChange.setText("Good Morning Everyone !!");
+        } else {
+            String msg = in.getData().toString();
+            TextView textViewToChange = (TextView) findViewById(R.id.hey);
+            textViewToChange.setText(msg);
         }
-*/    }
+    }
 
-    public void onClickButton(View v)
-    {
-        Intent myI = new Intent(this, Activity2.class);
+    public void onClickButton(View v) {
+        Intent myI = new Intent(getBaseContext(), MainActivity.class);
+        Logger.log("click button 1");
 
-//        myI.getIntExtra(count, i);
+        if (in.getData().toString().equals("Good Morning Everyone !!"))
+            myI.setData(Uri.parse("Good Evening Everyone !!"));
+        else if (in.getData().toString().equals("Good Evening Everyone !!"))
+            myI.setData(Uri.parse("Good Night Everyone !!"));
+        else if (in.getData().toString().equals("Good Night Everyone !!"))
+            myI.setData(Uri.parse("Good Morning Everyone !!"));
+        else {
 
-
-
+            Logger.log("fdgdfgdfgf1");
+            myI.setData(Uri.parse("Good Evening Everyone !!"));
+        }
+        Logger.log("click button 2");
         startActivity(myI);
+        Logger.log("click button 3");
     }
 
     @Override
@@ -67,8 +78,6 @@ public class MainActivity extends Activity {
 //        startActivity(myI);
 
     }
-    
-/*
 
     @Override
     protected void onStart() {
@@ -90,7 +99,6 @@ public class MainActivity extends Activity {
         super.onPause();
         Logger.log("onpause 1");
     }
-*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -113,7 +121,7 @@ public class MainActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-/*
+
     @Override
     protected void onStop() {
         //Logger.log("no problem before super onstop");
@@ -123,9 +131,15 @@ public class MainActivity extends Activity {
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+        Logger.log("restart 1");
+    }
+
+    @Override
     protected void onDestroy() {
         //Logger.log("no problem before super ondestroy");
         super.onDestroy();
         Logger.log("ondestroy 1");
-    }*/
+    }
 }

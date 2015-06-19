@@ -23,9 +23,9 @@ public class Activity3 extends Activity {
         Logger.log("oncreate 3");
 
         setContentView(R.layout.activity_main);
-
+        String st = getIntent().getData().toString();
         TextView textViewToChange = (TextView) findViewById(R.id.hey);
-        textViewToChange.setText("Good Night");
+        textViewToChange.setText(st);
 
 /*        if (savedInstanceState == null) {
             Logger.log("count : " + i);

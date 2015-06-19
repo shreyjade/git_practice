@@ -26,7 +26,7 @@ public class MyService extends Service {
             a=10;
         }
 */
-        Thread t=new Thread(new Runnable() {
+        Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
             while(true){}
