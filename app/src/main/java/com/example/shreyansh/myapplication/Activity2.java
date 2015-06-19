@@ -2,8 +2,8 @@ package com.example.shreyansh.myapplication;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,12 +24,15 @@ public class Activity2 extends Activity {
         //Logger.log("oncreate 2");
 
         setContentView(R.layout.activity_main);
+        /*Intent intent = getIntent();
+        Uri data = intent.getData();
+        String st = data.toString();*/
 
+        String st = getIntent().getData().toString();
         TextView textViewToChange = (TextView) findViewById(R.id.hey);
-        textViewToChange.setText("Good Evening");
-
+        //textViewToChange.setText("Good Evening");
+        textViewToChange.setText(st);
    }
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -42,6 +45,7 @@ public class Activity2 extends Activity {
 
     public void onClickButton(View v) {
         Intent myI = new Intent(this, Activity3.class);
+        myI.setData(Uri.parse("Good Night Everybody."));
 //        myI.getIntExtra(count, i);
         startActivity(myI);
     }
